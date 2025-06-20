@@ -9,4 +9,3 @@ public class currency {
         System.out.println("Rupee:"+ String.format("%.2f",Dollar) +" Dollar");
     }
 }
-1000
