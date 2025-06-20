@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BasicLogics.iml" filepath="$PROJECT_DIR$/BasicLogics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../CoditionalStatement/CoditionalStatement.iml" filepath="$PROJECT_DIR$/../CoditionalStatement/CoditionalStatement.iml" />
     </modules>
   </component>
 </project>
