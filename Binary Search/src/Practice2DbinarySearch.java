@@ -8,36 +8,47 @@ public class Practice2DbinarySearch {
                 {7, 8, 9}
         };
         int target = 7;
-        System.out.println(Arrays.toString(search(arr, 9)));
-
+        System.out.println(Arrays.toString(search(arr, target)));
     }
+
     public static int[] search(int[][] arr, int target) {
-        int row = arr.length;
-        int col = arr[0].length;
-        if(row == 0 || col == 0){
+        int rows = arr.length;
+        int cols = arr[0].length;
+
+        if (rows == 0 || cols == 0) {
             return new int[]{-1, -1};
         }
-        if(row== 1){
-            return binarySearch(arr , 0,0,col-1 , target);
-        }
 
-    }
-    public static int[] binarySearch(int[][] arr , int row , int cStart ,int  cEnd, int target){
-        while(cStart <= cEnd){
-            int middle = cStart+ (cEnd - cStart)/2;
-            if(arr[row][middle] == target){
-                return new int[]{row , middle};
-            }
-            if(arr[row][middle] < target){
-                cStart = middle + 1;
-            }
-            else {
-                cEnd = middle - 1;
+        // Perform binary search on each row
+        for (int i = 0; i < rows; i++) {
+            int[] result = binarySearch(arr[i], target);
+            if (result[1] != -1) {
+                return new int[]{i, result[1]};
             }
         }
 
+        return new int[]{-1, -1}; // not found
     }
 
+    // Binary search in 1D row
+    public static int[] binarySearch(int[] row, int target) {
+        int start = 0;
+        int end = row.length - 1;
 
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
 
+            if (row[mid] == target) {
+                return new int[]{0, mid}; // return column index
+            }
+
+            if (row[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        return new int[]{0, -1}; // not found in this row
+    }
 }
