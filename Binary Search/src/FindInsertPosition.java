@@ -4,7 +4,6 @@ public class FindInsertPosition {
         int target=1;
         int start=0;
         int end=nums.length-1;
-
        for(int i=start;i<=end;i++){
            if(nums[i] >=target){
                System.out.println(i);
