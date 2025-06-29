@@ -16,14 +16,9 @@ public class threeSum {
                       list1.add(nums[i]);
                       list1.add(nums[j]);
                       list1.add(nums[k]);
-                      if(!list.contains(list1)) {
-                          list.add(list1);
-                      }
-
                     }
                 }
             }
-
         }
         System.out.println(list);
     }
