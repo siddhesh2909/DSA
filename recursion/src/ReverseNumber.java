@@ -21,7 +21,7 @@ public class ReverseNumber {
         return helper(n, digits);
     }
     public static int helper(int n , int digits) {
-        if(n <10)
+        if(n %10 == n)
         {
             return n;
         }
