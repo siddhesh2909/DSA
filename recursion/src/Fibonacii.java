@@ -11,6 +11,7 @@ public class Fibonacii {
         }
         return fibo(n-1)+ fibo(n-2);
     }
+
     public static int simple(int n){
         int a=0,b=1;
         int c=0;
