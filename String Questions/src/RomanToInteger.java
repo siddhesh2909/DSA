@@ -5,7 +5,6 @@ public class RomanToInteger {
 
         for (int i = 0; i < s.length(); i++) {
             int num = value(s.charAt(i));
-
             if (i < s.length() - 1 && num < value(s.charAt(i + 1))) {
                 res -= num;
             } else {
