@@ -5,6 +5,7 @@ public class Stream {
         skip("", "abdac");
         System.out.println(skip1("abdac"));
         System.out.println(skip2("abappledac"));
+        System.out.println(skip3("abappledac"));
     }
     public static void skip(String a, String b) {
         if(b.isEmpty())
@@ -48,6 +49,20 @@ public class Stream {
         }
         else{
             return a.charAt(0)+ skip2(a.substring(1));
+        }
+    }
+
+    public static String skip3(String a) {
+        if(a.isEmpty())
+        {
+            return "";
+        }
+        if(a.startsWith("app") && !a.startsWith("apple"))
+        {
+            return skip3(a.substring(3));
+        }
+        else{
+            return a.charAt(0)+ skip3(a.substring(1));
         }
     }
 
