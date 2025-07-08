@@ -1,8 +1,12 @@
 package Strings;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class subseq {
     public static void main(String[] args) {
         sub("","abc");
+        System.out.println(sublist("","abc"));
     }
     public static void sub(String a ,String b) {
         if(b.isEmpty()) {
@@ -14,4 +18,20 @@ public class subseq {
         sub(a , b.substring(1));
 
     }
+
+    public static ArrayList<String> sublist(String a , String b) {
+        if(b.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(a);
+            return list;
+        }
+        char ch = b.charAt(0);
+        ArrayList<String> right=sublist(a + ch , b.substring(1));
+        ArrayList<String> left=sublist(a , b.substring(1));
+
+        left.addAll(right);
+        return left;
+
+    }
+
 }
