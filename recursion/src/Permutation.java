@@ -4,6 +4,7 @@ public class Permutation {
     public static void main(String[] args) {
         perm("","abc");
         System.out.println(permutaton("","abc"));
+        System.out.println(count("","abc"));
     }
     public static void perm(String a , String b){
         if(b.isEmpty())
@@ -34,5 +35,20 @@ public class Permutation {
             ans.addAll(permutaton(f + ch + s, b.substring(1)));
         }
         return ans;
+    }
+
+    public static int count(String a , String b){
+        if(b.isEmpty())
+        {
+            return 1;
+        }
+        int count = 0;
+        char ch = b.charAt(0);
+        for (int i = 0; i <= a.length(); i++) {
+            String f = a.substring(0, i);
+            String s = a.substring(i);
+            count =count + (count(f + ch + s, b.substring(1)));
+        }
+        return count;
     }
 }
