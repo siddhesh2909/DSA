@@ -16,4 +16,21 @@ public class Maze {
         return left+right;
     }
 
+    public static void mazePath(String p,int r, int c)
+    {
+        if(r==1 && c==1)
+        {
+            System.out.println(p);
+            return;
+        }
+        if(r>1)
+        {
+            mazePath(p+'D',r-1,c);
+        }
+        if(c>1)
+        {
+            mazePath(p+'R',r,c-1);
+        }
+
+    }
 }
