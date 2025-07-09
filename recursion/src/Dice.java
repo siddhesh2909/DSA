@@ -3,8 +3,9 @@ import java.util.List;
 
 public class Dice {
     public static void main(String[] args) {
-    dice("",4);
+        dice("",4);
         System.out.println(dice1("",4));
+        System.out.println(dicefaces("",6,8));
     }
     public static void dice(String p , int target)
     {
@@ -34,6 +35,23 @@ public class Dice {
         for(int i=1; i<=6 && i<=target ; i++)
         {
             list.addAll(dice1(p+i,target-i));
+        }
+        return list;
+    }
+    public static List<String> dicefaces(String p , int target , int face)
+    {
+        if(target == 0)
+        {
+            List<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+
+        List<String> list = new ArrayList<>();
+
+        for(int i=1; i<=face && i<=target ; i++)
+        {
+            list.addAll(dicefaces(p+i,target-i , face));
         }
         return list;
     }
