@@ -5,6 +5,7 @@ public class Maze {
         System.out.println(mazeCount(3,3));
         mazePath("",3,3);
         System.out.println(mazePathList("",3,3));
+        System.out.println(mazePathListDigonal("",3,3));
     }
     public static int mazeCount(int r, int c)
     {
@@ -52,6 +53,30 @@ public class Maze {
         if(c>1)
         {
             list.addAll(mazePathList(p+'R',r,c-1));
+        }
+        return list;
+    }
+
+    public static ArrayList<String> mazePathListDigonal(String p, int r, int c)
+    {
+        if(r==1 && c==1)
+        {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        ArrayList<String> list = new ArrayList<>();
+        if(r>1)
+        {
+            list.addAll(mazePathListDigonal(p+'V',r-1,c));
+        }
+        if(c>1)
+        {
+            list.addAll(mazePathListDigonal(p+'H',r,c-1));
+        }
+        if(r>1 && c>1)
+        {
+            list.addAll(mazePathListDigonal(p+'D',r-1,c-1));
         }
         return list;
     }
