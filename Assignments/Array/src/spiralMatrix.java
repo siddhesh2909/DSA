@@ -4,7 +4,7 @@ import java.util.List;
 public class spiralMatrix {
     public static void main(String[] args) {
         int[][] matrix ={{1,2,3},{8,9,4},{7,6,5}};
-       List<Integer> list=new ArrayList<>();
+        List<Integer> list=new ArrayList<>();
         int top=0;
         int bottom=matrix.length-1;
         int left=0;
