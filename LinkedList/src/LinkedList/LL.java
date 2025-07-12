@@ -105,22 +105,21 @@ public class LL {
             return deleteLast();
         }
         Node prev = get(index - 1);
-        Node curr = prev.next;
         int val = prev.next.val;
         prev.next = prev.next.next;
         size--;
         return val;
     }
 
-    public Node find(int val) {
+    public void find(int val) {
         Node node = head;
         while (node != null) {
             if (node.val == val) {
-                return node;
+                System.out.println(node.val);;
             }
             node = node.next;
         }
-        return null;
+        System.out.println();;
     }
 
 
