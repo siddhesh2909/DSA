@@ -53,21 +53,20 @@ public class LL {
         System.out.println("END");
     }
 
-    public void insertat(int val, int index) {
+    public void insertat(int index, int val) {
         if (index == 0) {
             insertFirst(val);
             return;
         }
+
         if (index == size) {
             insertLast(val);
             return;
         }
-        Node temp = head;
-        for (int i = 1; i < index; i++) {
-            temp = temp.next;
-        }
-        Node node = new Node(val , temp.next);
-        temp.next = node;
+
+        Node prev = get(index - 1);
+        Node node = new Node(val, prev.next);
+        prev.next = node;
         size++;
     }
 
@@ -79,6 +78,27 @@ public class LL {
         }
         size--;
         return val;
+    }
+
+    public int deleteLast() {
+        if (size <= 1) {
+            return deleteFirst();
+        }
+
+        Node secondLast = get(size - 2);
+        int val = tail.val;
+        tail = secondLast;
+        tail.next = null;
+        size--;
+        return val;
+    }
+
+    private Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
     }
 
     public int getSize() {
