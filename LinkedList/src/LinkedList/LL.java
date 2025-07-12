@@ -68,6 +68,17 @@ public class LL {
         }
         Node node = new Node(val , temp.next);
         temp.next = node;
+        size++;
+    }
+
+    public int deleteFirst() {
+        int val = head.val;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        size--;
+        return val;
     }
 
     public int getSize() {

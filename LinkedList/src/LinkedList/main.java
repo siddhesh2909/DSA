@@ -10,6 +10,8 @@ public class main {
         list.insertLast(2);
         list.insertat(4,3);
         list.display();
+        System.out.println(list.deleteFirst());
+        list.display();
 
     }
 }
