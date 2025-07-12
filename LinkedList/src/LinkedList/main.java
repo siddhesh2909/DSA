@@ -9,9 +9,9 @@ public class main {
         list.insertFirst(6);
         list.insertLast(2);
         list.display();
-        System.out.println(list.deleteAt(2));
-        list.display();
-
+//        System.out.println(list.deleteAt(2));
+//        list.display();
+        list.find(5);
 
     }
 }
