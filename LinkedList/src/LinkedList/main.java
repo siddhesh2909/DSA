@@ -8,6 +8,8 @@ public class main {
         list.insertFirst(5);
         list.insertFirst(6);
         list.insertLast(2);
+        list.insertat(4,3);
         list.display();
+
     }
 }
