@@ -19,6 +19,7 @@ public class main {
         list.insert(5);
         list.insert(6);
         list.insertLast(7);
+        list.insertAt(5,99);
 
         list.display();
         list.displayRev();

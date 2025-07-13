@@ -44,6 +44,33 @@ public class DLL {
         node.prev = last;
     }
 
+    public void insertAt(int after, int val) {
+        Node p = find(after);
+        if (p == null) {
+            System.out.println("Node not found");
+            return;
+        }
+        Node newNode = new Node(val);
+        newNode.next = p.next;
+        newNode.prev = p;
+
+        if (p.next != null) {
+            p.next.prev = newNode;
+        }
+        p.next = newNode;
+    }
+
+    public Node find(int val) {
+        Node node = head;
+        while(node != null){
+            if(node.val == val){
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
     public void display() {
         Node node = head;
         while(node != null){
