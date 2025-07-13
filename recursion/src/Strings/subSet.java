@@ -40,6 +40,7 @@ public class subSet {
             }
             end=outer.size()-1;
             int n = outer.size();
+
             for(int j=start;j<n;j++)
             {
                 List<Integer> Internal = new ArrayList<>(outer.get(j));
