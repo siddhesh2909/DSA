@@ -20,6 +20,7 @@ public class main {
         list.insert(6);
 
         list.display();
+        list.displayRev();
 
     }
 }
