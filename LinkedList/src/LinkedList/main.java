@@ -13,16 +13,22 @@ public class main {
 //      list.display();
 //        list.find(5);
 
-        DLL list = new DLL();
+//        DLL list = new DLL();
+//        list.insert(3);
+//        list.insert(4);
+//        list.insert(5);
+//        list.insert(6);
+//        list.insertLast(7);
+//        list.insertAt(5,99);
+//
+//        list.display();
+//        list.displayRev();
+        CLL list = new CLL();
         list.insert(3);
         list.insert(4);
         list.insert(5);
         list.insert(6);
-        list.insertLast(7);
-        list.insertAt(5,99);
-
         list.display();
-        list.displayRev();
 
     }
 }
