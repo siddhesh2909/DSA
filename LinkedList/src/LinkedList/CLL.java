@@ -26,6 +26,23 @@ public class CLL {
         newNode.next = head;
         tail = newNode;
     }
+    public void delete(int value) {
+        Node node = head;
+        if(node == null) return;
+        if(node.val == value) {
+            head = head.next;
+            tail.next = head;
+        }
+
+        do{
+            Node n = node.next;
+            if(n.val == value) {
+                node.next=n.next;
+            }
+            node=node.next;
+
+        }while(node != head);
+    }
 
     public void display() {
         Node node =head;
