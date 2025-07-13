@@ -18,6 +18,7 @@ public class main {
         list.insert(4);
         list.insert(5);
         list.insert(6);
+        list.insertLast(7);
 
         list.display();
         list.displayRev();
