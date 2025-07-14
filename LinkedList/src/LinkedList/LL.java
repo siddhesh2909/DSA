@@ -135,4 +135,20 @@ public class LL {
         return size;
     }
 
+    public void inserRec(int index, int val) {
+        head = insertRec(val, index, head);
+    }
+
+    private Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node newNode = new Node(val, node);
+            size++;
+            return newNode;
+        }
+
+        node.next = insertRec(val, index - 1, node.next);
+        return node;
+    }
+
+
 }
