@@ -2,14 +2,14 @@ package LinkedList;
 
 public class main {
     public static void main(String[] args) {
-        LL list1 = new LL();
-        list1.insertFirst(3);
-        list1.insertFirst(4);
-        list1.insertFirst(5);
-        list1.insertFirst(6);
-        list1.display();
-        list1.inserRec(3,99);
-        list1.display();
+//        LL list1 = new LL();
+//        list1.insertFirst(3);
+//        list1.insertFirst(4);
+//        list1.insertFirst(5);
+//        list1.insertFirst(6);
+//        list1.display();
+//        list1.inserRec(3,99);
+//        list1.display();
 
 
 //      System.out.println(list1.deleteAt(2));
@@ -33,6 +33,15 @@ public class main {
 //        list.insert(6);
 //        list.delete(5);
 //        list.display();
+
+        LL list1 = new LL();
+        list1.insertFirst(3);
+        list1.insertFirst(4);
+        list1.insertFirst(5);
+        list1.insertFirst(6);
+        list1.insertFirst(7);
+        list1.display();
+        list1.middleNode();
 
     }
 }
