@@ -265,6 +265,22 @@ public class LL {
         tail.next = null;
     }
 
+    public void revrse(Node node)
+    {
+        Node prev = null;
+        Node curr = head;
+
+        while (curr != null) {
+            Node nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+
+        head = prev;
+    }
+
+
     public static void main(String[] args) {
         LL ll = new LL();
         ll.insertLast(4);
@@ -273,7 +289,8 @@ public class LL {
         ll.insertLast(7);
         Node head = ll.head;
         ll.display();
-        ll.revRec(head);
+//        ll.revRec(head);
+        ll.revrse(head);
         ll.display();
     }
 
