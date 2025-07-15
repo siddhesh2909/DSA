@@ -251,5 +251,31 @@ public class LL {
         bubble(r-1,0);
     }
 
+    public void revRec(Node node)
+    {
+        if(node == tail)
+        {
+            head = tail;
+            return;
+        }
+        revRec(node.next);
+
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    public static void main(String[] args) {
+        LL ll = new LL();
+        ll.insertLast(4);
+        ll.insertLast(5);
+        ll.insertLast(6);
+        ll.insertLast(7);
+        Node head = ll.head;
+        ll.display();
+        ll.revRec(head);
+        ll.display();
+    }
+
 
 }
