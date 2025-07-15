@@ -193,10 +193,10 @@ public class LL {
         return  ans;
     }
 
-    public Node middleNode(Node head) {
+    public ListNode middleNode(ListNode head) {
 
-        Node fast=head;
-        Node slow =head;
+        ListNode fast=head;
+        ListNode slow =head;
 
         while(fast != null && fast.next != null)
         {
@@ -265,13 +265,13 @@ public class LL {
         tail.next = null;
     }
 
-    public Node revrse(Node node)
+    public ListNode revrse(ListNode node)
     {
-        Node prev = null;
-        Node curr = head;
+        ListNode prev = null;
+        ListNode curr = node;
 
         while (curr != null) {
-            Node nextTemp = curr.next;
+            ListNode nextTemp = curr.next;
             curr.next = prev;
             prev = curr;
             curr = nextTemp;
@@ -355,6 +355,32 @@ public class LL {
 //        ll.revRec(head);
         ll.revrse(head);
         ll.display();
+    }
+
+
+    public void reorderList(ListNode head) {
+        if(head == null || head.next == null) return;
+
+        ListNode mid = middleNode(head);
+
+        ListNode headSecond = revrse(mid);
+
+        ListNode headFirst = head;
+
+        while(headFirst != null && headSecond != null) {
+            ListNode temp = headFirst.next;
+            headFirst.next = headSecond;
+            headFirst = temp;
+
+            temp = headSecond.next;
+            headSecond.next = headFirst;
+            headSecond = temp;
+        }
+
+        if(headFirst != null) {
+            headFirst.next = null;
+        }
+
     }
 
 
