@@ -193,7 +193,7 @@ public class LL {
         return  ans;
     }
 
-    public void middleNode() {
+    public Node middleNode(Node head) {
 
         Node fast=head;
         Node slow =head;
@@ -203,7 +203,7 @@ public class LL {
             fast=fast.next.next;
             slow = slow.next;
         }
-        System.out.println(slow.val);
+        return slow;
     }
 
     public void BubbleSort()
@@ -265,7 +265,7 @@ public class LL {
         tail.next = null;
     }
 
-    public void revrse(Node node)
+    public Node revrse(Node node)
     {
         Node prev = null;
         Node curr = head;
@@ -277,7 +277,7 @@ public class LL {
             curr = nextTemp;
         }
 
-        head = prev;
+       return prev;
     }
 
     public Node reverseBetween(Node head, int left, int right) {
@@ -315,6 +315,32 @@ public class LL {
 
         newEnd.next = current;
         return head;
+    }
+
+    // palindrome
+    public boolean palindrome(Node head) {
+        if (head == null || head.next == null) return true;
+
+        Node mid = middleNode(head);
+        Node headSecond = revrse(mid);
+        Node revHead = headSecond;
+
+        Node firstHalf = head;
+        boolean isPalin = true;
+
+        while (headSecond != null) {
+            if (firstHalf.val != headSecond.val) {
+                isPalin = false;
+                break;
+            }
+            firstHalf = firstHalf.next;
+            headSecond = headSecond.next;
+        }
+        revrse(revHead);
+
+        return isPalin;
+
+
     }
 
 

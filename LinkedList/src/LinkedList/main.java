@@ -41,7 +41,6 @@ public class main {
         list1.insertFirst(6);
         list1.insertFirst(7);
         list1.display();
-        list1.middleNode();
 
     }
 }
