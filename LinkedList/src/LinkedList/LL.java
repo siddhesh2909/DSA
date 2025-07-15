@@ -206,5 +206,50 @@ public class LL {
         System.out.println(slow.val);
     }
 
+    public void BubbleSort()
+    {
+        bubble(size-1,0);
+    }
+
+    public void bubble(int r , int c)
+    {
+        if( r == 0)
+        {
+            return;
+        }
+        if(c<r)
+        {
+            Node first = get(c);
+            Node second = get(c+1);
+
+            if(first.val > second.val)
+            {
+                if(first == head)
+                {
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                } else if (second == tail) {
+                    Node prev= get(c-1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail;
+                }
+                else {
+                    Node prev= get(c-1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+
+            }
+            bubble(r,c+1);
+
+
+        }
+        bubble(r-1,0);
+    }
+
 
 }
