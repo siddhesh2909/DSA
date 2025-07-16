@@ -280,6 +280,51 @@ public class LL {
        return prev;
     }
 
+    public Node reverseBetweentry(Node head, int left, int right)
+    {
+        if(left == right)
+        {
+            return head;
+        }
+
+        Node curr = head;
+        Node prev = null;
+
+        for(int i=0; i < left -1 && curr != null;i++)
+        {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        Node last = prev;
+        Node newEnd = curr;
+        Node next = curr.next;
+
+        for(int i=0; i < right -left +1 && curr != null;i++)
+        {
+            curr.next = prev;
+            prev = curr;
+            curr = curr.next;
+            if(next != null)
+            {
+                next = next.next;
+            }
+        }
+        if(last!=null)
+        {
+            last.next = prev;
+        }
+        else {
+            head = prev;
+        }
+
+        newEnd.next = curr;
+
+        return head;
+
+
+    }
+
     public Node reverseBetween(Node head, int left, int right) {
         if (left == right) {
             return head;
