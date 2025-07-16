@@ -11,15 +11,16 @@ public class Main {
 //        queue.remove();
 //        queue.display();
 
-        circularQueue circularQueue = new circularQueue(5);
+        circularQueue circularQueue = new DynamicQueue(5);
         circularQueue.push(10);
         circularQueue.push(20);
         circularQueue.push(30);
         circularQueue.push(40);
         circularQueue.push(50);
-
-        circularQueue.remove();
+        circularQueue.push(50);
         circularQueue.push(60);
+        circularQueue.remove();
+//      circularQueue.push(60);
 
         circularQueue.display();
 

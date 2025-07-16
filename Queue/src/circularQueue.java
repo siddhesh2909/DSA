@@ -26,6 +26,7 @@ public class circularQueue {
 
     public boolean push(int value) {
         if (isFull()) {
+            System.out.println("Full");
             return false;
         }
 
