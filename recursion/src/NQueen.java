@@ -41,7 +41,6 @@ public class NQueen {
                 return false;
             }
         }
-
         return true;
     }
     public static void display(boolean[][] board) {
