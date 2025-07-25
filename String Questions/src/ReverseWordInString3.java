@@ -17,6 +17,18 @@ public class ReverseWordInString3 {
         System.out.println(sb.toString());
         sb.delete(sb.length()-1,sb.length());
 
+//        StringBuilder sb=new StringBuilder();
+//        String[] words= s.split(" ");
+//        for(String i:words)
+//        {
+//            StringBuilder temp=new StringBuilder(i);
+//            temp.reverse();
+//            sb.append(temp);
+//            sb.append(" ");
+//
+//        }
+//        return sb.toString().trim();
+
     }
 
 }
