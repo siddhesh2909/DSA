@@ -16,7 +16,7 @@ public class ConcatenationofArray1929 {
         int[] ans = new int[len];
 
         for(int i=0; i < len  ; i++)
-        {3
+        {
             ans[i]=nums[i % n];
         }
 
