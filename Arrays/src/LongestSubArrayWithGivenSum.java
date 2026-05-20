@@ -3,8 +3,8 @@ import java.util.Map;
 
 public class LongestSubArrayWithGivenSum {
     public static void main(String[] args) {
-        int[] arr = {10, 5, 2, 7, 1, 9};
-        int k=15;
+        int[] arr = {9, -3, 3, -1, 6, -5};
+        int k=0;
         HashMap<Integer , Integer> map = new HashMap<>();
         int sum=0;
         int maxLen = 0;
