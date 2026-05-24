@@ -10,7 +10,7 @@ public class MajorityElement {
 //        {
 //            map.put(num, map.getOrDefault(num, 0) + 1);
 //
-//            if(map.get(num) > nums.length/2)
+//            if(map.get(num) > nums.length/2)sh
 //            {
 //                System.out.println(num);
 //                return;
