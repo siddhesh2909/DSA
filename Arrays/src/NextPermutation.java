@@ -18,7 +18,7 @@ public class NextPermutation {
 
     public static void main(String[] args)
     {
-        int[] nums ={1,2,3};
+        int[] nums ={1,2,3,4};
 
         int index=-1;
         int n= nums.length;
@@ -46,9 +46,8 @@ public class NextPermutation {
             if(nums[i] > nums[index])
             {
                 swap(nums,index,i);
+                break;
             }
-
-            break;
         }
         reverse(nums,index+1,n-1);
 
