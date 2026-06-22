@@ -3,26 +3,24 @@ public class RemoveOuterParenthesis {
     {
         String s ="(()())(())";
         StringBuilder sb = new StringBuilder();
-        int count=0;
+        int cnt = 0;
+
         for(char c : s.toCharArray())
         {
             if(c == '(')
             {
-                if(count> 0)
+                if(cnt>0)
                 {
                     sb.append(c);
                 }
-                count++;
+                cnt++;
             } else if (c == ')') {
-                count--;
-                if(count>0)
+                if(cnt>0)
                 {
                     sb.append(c);
                 }
+                cnt--;
             }
-
-
         }
-        System.out.println(sb);
     }
 }
