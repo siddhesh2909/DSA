@@ -9,21 +9,21 @@ public class LongestSubArrayWithGivenSum {
         int sum=0;
         int maxLen = 0;
 
-        for(int i=0; i< arr.length ; i++)
+        for(int i=0; i<arr.length; i++)
         {
             sum+=arr[i];
 
-            if(sum == k)
+            if(sum ==k)
             {
-                maxLen= i+1;
+                maxLen=i+1;
             }
 
-            int rem = sum - k;
+            int rem = sum -k;
 
             if(map.containsKey(rem))
             {
-                int len = i -map.get(rem);
-                maxLen= Math.max(len,maxLen);
+                int len = i - map.get(rem);
+                maxLen=Math.max(maxLen,len);
             }
 
             if(!map.containsKey(sum))
