@@ -2,7 +2,13 @@ import java.util.Arrays;
 
 public class Permutation {
 
-    public static void permute(int[] nums , int index)
+    static void swap(int[] nums , int a, int b)
+    {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b]=temp;
+    }
+    static void permute(int[] nums , int index)
     {
         if(index == nums.length)
         {
@@ -12,15 +18,11 @@ public class Permutation {
 
         for(int i= index; i< nums.length ; i++)
         {
-            int temp = nums[index];
-            nums[index] = nums[i];
-            nums[i]=temp;
+            swap(nums,index , i);
 
             permute(nums , index+1);
 
-            temp = nums[index];
-            nums[index] = nums[i];
-            nums[i]=temp;
+            swap(nums,index , i);
         }
     }
     public static void main(String[] args)
