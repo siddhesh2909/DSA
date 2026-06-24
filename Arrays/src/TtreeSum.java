@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class THreeeSum {
+public class TtreeSum {
     public static void main(String[] args)
     {
         int[] nums = {-1,0,1,2,-1,-4};
