@@ -7,7 +7,7 @@ public class RotateArray {
         int k=3;
 
         int n= arr.length;
-        int m = k %n;
+        k = k %n;
 
         reverse(arr , 0, n-1);
         reverse(arr,0,k-1);
